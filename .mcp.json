@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "test": {
+      "command": "node",
+      "args": ["/tmp/test-mcp-server/server.js"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"]
+    }
+  }
+}
