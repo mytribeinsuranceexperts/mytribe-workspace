@@ -1,3 +1,8 @@
+---
+name: agents-readme
+description: Documentation file - not an agent
+---
+
 # Claude Code Custom Agents - myTribe Development
 
 This directory contains **22 specialized agents** for the myTribe Development workspace.

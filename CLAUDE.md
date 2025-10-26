@@ -10,31 +10,37 @@ This file provides Claude Code with global context and preferences that apply ac
 
 ### Always Follow These Guidelines
 
-1. **Latest Dependencies**
+1. **MCP Tools Priority**
+   - **ALWAYS prefer MCP tools over CLI commands** when both are available
+   - MCP tools are prefixed with `mcp__` (e.g., `mcp__github_*`)
+   - Only fall back to CLI if MCP tool doesn't exist or fails
+   - Example: Use GitHub MCP instead of `gh` CLI for GitHub operations
+
+2. **Latest Dependencies**
    - When suggesting packages or dependencies, always use the latest stable versions
    - Check for current versions rather than suggesting older packages
    - Mention if breaking changes exist between versions
 
-2. **Communication Style**
+3. **Communication Style**
    - Keep responses concise but factual - include important details, cut unnecessary explanation
    - Favor bulleted lists over long paragraphs
    - Use tables for comparisons and structured data
    - Avoid unnecessary emojis unless explicitly requested
    - In documentation: Remove completed reasoning, keep progress and deviations
 
-3. **Documentation Organization**
+4. **Documentation Organization**
    - **ALWAYS update existing docs** rather than creating new ones
    - Only create new documentation files when explicitly requested
    - Reference existing wiki docs rather than duplicating content
    - **Maintain living documents:** As work progresses, update relevant sections, remove completed reasoning, log progress and deviations from original plan
    - **Clean as you go:** Remove outdated information when updating files - don't just append to the bottom
 
-4. **Memory Management**
+5. **Memory Management**
    - Use `#` at start of message to quickly add to this memory file
    - Use `/memory` command to edit this file directly
    - Keep this file focused - don't bloat with hundreds of rules
 
-5. **Documentation Policy - Living Documents**
+6. **Documentation Policy - Living Documents**
 
    **Core principle:** Documentation should evolve with the project, not accumulate.
 
@@ -367,6 +373,13 @@ Use for complex problems requiring deep analysis:
 **Workspace Root:** `C:\Users\chris\myTribe Development`
 
 **Multi-repo workspace** (not monorepo) - each repo has own git history, deploys independently
+
+### GitHub Context
+
+**Organization:** `mytribeinsuranceexperts`
+**Primary Repository:** `mytribe-workspace` (this workspace is also a GitHub repo)
+When asked about GitHub repos/PRs/issues, default to `mytribeinsuranceexperts` organization.
+
 ---
 
 ## 🎓 Remember
