@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "🏠 Workspace Root",
+      "path": "."
+    },
+    {
       "name": "📦 Website & Cloudflare",
       "path": "website-and-cloudflare"
     },
@@ -23,9 +27,6 @@
     {
       "name": "💾 Shared Data",
       "path": "data"
-    },
-    {
-      "path": "mytribe-origin"
     }
   ],
   "settings": {
@@ -97,6 +98,22 @@
     "editor.minimap.enabled": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
+
+    // ============================================================================
+    // NAVIGATION & BREADCRUMBS
+    // ============================================================================
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "on",
+    "breadcrumbs.symbolPath": "on",
+    "breadcrumbs.symbolSortOrder": "position",
+    "breadcrumbs.icons": true,
+
+    // ============================================================================
+    // ICONS & VISUAL ENHANCEMENTS
+    // ============================================================================
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always",
 
     // ============================================================================
     // CODE ACTIONS ON SAVE
@@ -214,16 +231,77 @@
       ".pre-commit-config.yaml": "yaml",
       "wrangler.toml": "toml"
     },
-    "chat.mcp.discovery.enabled": {
-      "claude-desktop": true
-    },
-    "chat.mcp.gallery.enabled": true
+
+    // ============================================================================
+    // EXTENSION-SPECIFIC SETTINGS
+    // ============================================================================
+
+    // Peacock - Color-code workspace folders
+    "peacock.favoriteColors": [
+      {
+        "name": "Website Blue",
+        "value": "#1857a4"
+      },
+      {
+        "name": "AI Green",
+        "value": "#16825d"
+      },
+      {
+        "name": "Wiki Yellow",
+        "value": "#d4ac0d"
+      },
+      {
+        "name": "Forensics Purple",
+        "value": "#7d3c98"
+      },
+      {
+        "name": "PowerBI Orange",
+        "value": "#d68910"
+      },
+      {
+        "name": "Data Gray",
+        "value": "#5d6d7e"
+      }
+    ],
+
+    // Bookmarks - Settings
+    "bookmarks.saveBookmarksInProject": true,
+    "bookmarks.navigateThroughAllFiles": true,
+
+    // Indent Rainbow - Better colors
+    "indentRainbow.colors": [
+      "rgba(64,64,16,0.3)",
+      "rgba(32,64,32,0.3)",
+      "rgba(64,32,64,0.3)",
+      "rgba(16,48,48,0.3)"
+    ],
+
+    // Git Graph
+    "git-graph.showStatusBarItem": true,
+    "git-graph.showUncommittedChanges": true,
+
+    // Tabnine
+    "tabnine.experimentalAutoImports": true,
+
+    // Console Ninja
+    "console-ninja.featureSet": "Community",
+
+    // ============================================================================
+    // MCP SERVERS
+    // ============================================================================
+    "mcpServers": {
+      "test": {
+        "command": "node",
+        "args": ["/tmp/test-mcp-server/server.js"]
+      }
+    }
   },
   "extensions": {
     "recommendations": [
       // Code Quality & Formatting
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
+      "sonarsource.sonarlint-vscode",
 
       // Language Support
       "ms-python.python",
@@ -233,15 +311,26 @@
 
       // Git & GitHub
       "github.vscode-pull-request-github",
-      "eamodio.gitlens",
+      "mhutchie.git-graph",
+
+      // Navigation & File Management
+      "vscode-icons-team.vscode-icons",
+      "alefragnani.bookmarks",
+      "christian-kohler.path-intellisense",
+      "folke.vscode-monorepo-workspace",
+
+      // Productivity & AI
+      "tabnine.tabnine-vscode",
+      "wallabyjs.console-ninja",
 
       // Developer Experience
-      "usernamehw.errorlens",
-      "wix.vscode-import-cost",
       "aaron-bond.better-comments",
+      "johnpapa.vscode-peacock",
+      "oderwat.indent-rainbow",
 
       // Cloudflare Workers
-      "cloudflare.vscode-cloudflare-workers"
+      "cloudflare.vscode-cloudflare-workers",
+      "mytribe.tmux-manager"
     ]
   }
 }

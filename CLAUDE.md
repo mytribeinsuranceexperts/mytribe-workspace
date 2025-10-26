@@ -367,7 +367,6 @@ Use for complex problems requiring deep analysis:
 **Workspace Root:** `C:\Users\chris\myTribe Development`
 
 **Multi-repo workspace** (not monorepo) - each repo has own git history, deploys independently
-
 ---
 
 ## 🎓 Remember
@@ -390,4 +389,3 @@ Use for complex problems requiring deep analysis:
 **Claude Code Version:** Compatible with Claude Code 1.0+
 
 <!-- End of CLAUDE.md -->
-- always try to edit and amend documents before creating new

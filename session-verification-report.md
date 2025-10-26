@@ -138,7 +138,7 @@ TestPromptSanitization: 3/3 passed
 
 ## Backup Created
 
-**Location:** `C:/Users/chris/myTribe Development/phase-7.5-ui-redesign-backup/`
+**Location:** `/home/dev/myTribe Development/phase-7.5-ui-redesign-backup/`
 
 **Contents:**
 - commit-f737bb3-full-diff.patch (384 KB) - Full restore capability

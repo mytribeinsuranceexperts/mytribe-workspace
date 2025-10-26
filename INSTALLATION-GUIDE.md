@@ -16,7 +16,7 @@ wsl -d Ubuntu
 ### Step 2: Navigate to Workspace
 
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development"
+cd "/home/dev/myTribe Development"
 ```
 
 ### Step 3: Run Installation Script
@@ -88,7 +88,7 @@ sudo apt install -y postgresql-client libpq-dev
 
 **1. website-and-cloudflare:**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/website-and-cloudflare"
+cd "/home/dev/myTribe Development/website-and-cloudflare"
 npm install
 npm run lint
 npm test
@@ -96,7 +96,7 @@ npm test
 
 **2. comparison-forms:**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/comparison-forms"
+cd "/home/dev/myTribe Development/comparison-forms"
 npm install
 npm run type-check
 npm test
@@ -104,7 +104,7 @@ npm test
 
 **3. mytribe-ai-research-platform (Frontend):**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/frontend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/frontend"
 npm install
 npm run type-check
 npm test
@@ -112,7 +112,7 @@ npm test
 
 **4. mytribe-ai-research-platform (Backend):**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/backend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/backend"
 
 # Create virtual environment
 python3 -m venv venv
@@ -138,7 +138,7 @@ deactivate
 ### website-and-cloudflare
 
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/website-and-cloudflare"
+cd "/home/dev/myTribe Development/website-and-cloudflare"
 cp .env.example .env
 nano .env  # or code .env
 ```
@@ -153,7 +153,7 @@ Required variables:
 ### mytribe-ai-research-platform
 
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform"
 cp .env.example .env
 nano .env  # or code .env
 ```
@@ -172,17 +172,17 @@ Required variables:
 
 ```bash
 # website-and-cloudflare
-cd "/mnt/c/Users/chris/myTribe Development/website-and-cloudflare"
+cd "/home/dev/myTribe Development/website-and-cloudflare"
 npm test
 npm run lint
 
 # comparison-forms
-cd "/mnt/c/Users/chris/myTribe Development/comparison-forms"
+cd "/home/dev/myTribe Development/comparison-forms"
 npm test
 npm run type-check
 
 # AI Research Platform frontend
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/frontend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/frontend"
 npm test
 npm run type-check
 ```
@@ -190,7 +190,7 @@ npm run type-check
 ### Python Backend
 
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/backend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/backend"
 source venv/bin/activate
 pytest
 deactivate
@@ -204,28 +204,28 @@ deactivate
 
 **website-and-cloudflare:**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/website-and-cloudflare"
+cd "/home/dev/myTribe Development/website-and-cloudflare"
 npm run dev
 # Opens at http://localhost:5173
 ```
 
 **comparison-forms:**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/comparison-forms"
+cd "/home/dev/myTribe Development/comparison-forms"
 npm run dev
 # Opens at http://localhost:5173
 ```
 
 **AI Research Platform frontend:**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/frontend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/frontend"
 npm run dev
 # Opens at http://localhost:5173
 ```
 
 **AI Research Platform backend:**
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/backend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/backend"
 source venv/bin/activate
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 # API at http://localhost:8000
@@ -241,13 +241,13 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 2. Press `F1` or `Ctrl+Shift+P`
 3. Type: **"WSL: Connect to WSL"**
 4. Select **Ubuntu**
-5. Open folder: `/mnt/c/Users/chris/myTribe Development`
+5. Open folder: `/home/dev/myTribe Development`
 
 ### Option 2: Open from WSL Command Line
 
 ```bash
 # From WSL Ubuntu terminal
-cd "/mnt/c/Users/chris/myTribe Development"
+cd "/home/dev/myTribe Development"
 code .
 ```
 
@@ -285,18 +285,20 @@ sudo chown -R $USER:$USER node_modules
 
 **Solution:** Make sure you're in the right directory
 ```bash
-cd "/mnt/c/Users/chris/myTribe Development/mytribe-ai-research-platform/backend"
+cd "/home/dev/myTribe Development/mytribe-ai-research-platform/backend"
 ls -la venv  # Should exist
 source venv/bin/activate
 ```
 
 ### Problem: Can't access Windows files from WSL
 
-**Solution:** Windows drives are mounted at `/mnt/`:
+**Note:** This section is for Windows users running WSL. If you're on native Linux, this doesn't apply.
+
+**Solution (WSL users):** Windows drives are mounted at `/mnt/`:
 ```bash
 # C:\ is at /mnt/c/
 # D:\ is at /mnt/d/
-cd /mnt/c/Users/chris/
+cd /home/dev/
 ```
 
 ### Problem: PostgreSQL connection fails

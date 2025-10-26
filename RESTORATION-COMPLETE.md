@@ -20,7 +20,7 @@ Your reorganization was successful with only 2 important files needing restorati
 
 ### 1. API Keys File ✅
 - **File:** `.env` (907 bytes)
-- **Restored to:** `C:\Users\chris\myTribe Development\api-keys\.env`
+- **Restored to:** `/home/dev/myTribe Development/api-keys/.env`
 - **Contains:** Active API keys for:
   - Webflow API
   - Cloudflare (tokens, account ID, zone ID)
@@ -37,7 +37,7 @@ Your reorganization was successful with only 2 important files needing restorati
 
 ### 2. Environment Template File ✅
 - **File:** `.env.example` (2,713 bytes)
-- **Restored to:** `C:\Users\chris\myTribe Development\website-and-cloudflare\.env.example`
+- **Restored to:** `/home/dev/myTribe Development/website-and-cloudflare/.env.example`
 - **Contains:** Template with placeholder values for:
   - Webflow API keys
   - Cloudflare API tokens (read, create, workers, analytics)
@@ -165,7 +165,7 @@ Check your restored `.env` file and test key functionality:
 ```bash
 # Don't display the file contents in terminal (security!)
 # Instead, use a secure text editor
-code "C:\Users\chris\myTribe Development\api-keys\.env"
+code "/home/dev/myTribe Development/api-keys/.env"
 ```
 
 ### 2. Consider Key Rotation (Security Best Practice)
@@ -178,7 +178,7 @@ Since keys were in Recycle Bin since October 9:
 
 ### 3. Commit .env.example to Git (Optional)
 ```bash
-cd "C:\Users\chris\myTribe Development\website-and-cloudflare"
+cd "/home/dev/myTribe Development/website-and-cloudflare"
 git add .env.example
 git commit -m "docs: restore .env.example template file
 
