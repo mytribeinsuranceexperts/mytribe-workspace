@@ -1,0 +1,44 @@
+# Sub-repositories (each has its own git history)
+comparison-forms/
+mytribe-ai-research-platform/
+website-and-cloudflare/
+sharepoint-forensics/
+powerbi-automation/
+development-wiki/
+mytribe-origin/
+
+# IDE and editor directories
+.vscode/
+.claude/
+.config/
+
+# Cache and application data
+.websiteauditor/
+.wrangler/
+.ms-ad/
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+nul
+
+# API keys and secrets
+api-keys/
+
+# Old/archived content
+OLD/
