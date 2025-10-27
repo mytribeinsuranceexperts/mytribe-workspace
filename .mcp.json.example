@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_github_token_here"
+      }
+    },
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp?project_ref=your_project_ref",
+      "headers": {
+        "Authorization": "Bearer your_anon_key_here"
+      }
+    },
+    "filesystem": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\YOUR_USERNAME\\myTribe Development\\mytribe-origin"
+      ]
+    }
+  }
+}
