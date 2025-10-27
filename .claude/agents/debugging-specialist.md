@@ -41,6 +41,7 @@ Systematically identify and resolve errors through methodical investigation of s
 - Verify database connection strings and credentials
 - Test API endpoints independently to isolate failures
 - Review recent code changes that may have introduced bug
+- Check for god objects/long functions (>50 lines) as source of complexity bugs
 
 **Deliverables**
 1. **Error analysis**: Clear explanation of what failed and why

@@ -24,7 +24,7 @@ Design efficient database schemas, optimize slow queries, and ensure safe migrat
 2. **Indexing**: Index foreign keys and frequently queried columns
 3. **Constraints**: Use NOT NULL, UNIQUE, CHECK constraints
 4. **Relationships**: Properly define ONE-TO-MANY, MANY-TO-MANY
-5. **Naming**: Clear, consistent table and column names
+5. **Naming**: Clear, consistent table and column names; tables plural (users), columns singular (user_id), avoid abbreviations
 6. **Migrations**: Always reversible with down() functions
 
 **Query Optimization Checklist**

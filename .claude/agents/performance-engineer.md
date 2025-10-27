@@ -50,6 +50,7 @@ Identify and eliminate performance bottlenecks across frontend, backend, databas
 - Synchronous operations that should be async
 - Large response payloads (need pagination)
 - No connection pooling
+- God functions (500+ lines) doing too much
 
 **Cloudflare Workers:**
 - Too many external API calls per request

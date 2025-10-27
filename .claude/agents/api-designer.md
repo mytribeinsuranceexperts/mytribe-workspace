@@ -21,7 +21,7 @@ Design clean, RESTful APIs with clear contracts and robust error handling. Ensur
 
 **API Design Principles**
 1. **RESTful**: Use standard HTTP methods (GET, POST, PUT, DELETE)
-2. **Consistent**: Follow naming conventions across all endpoints
+2. **Consistent naming**: Resource-oriented URLs, plural nouns, hyphens not underscores; use same verbs across endpoints (fetch/get/retrieve - pick ONE)
 3. **Versioned**: Support API versioning (e.g., `/api/v1/`)
 4. **Documented**: Every endpoint has clear documentation
 5. **Validated**: Input validation with clear error messages

@@ -108,3 +108,4 @@ __pycache__/
 # Note: .mcp.json is excluded (contains secrets)
 # Note: We negate the *.code-workspace exclusion to include workspace config
 !myTribe-Development.code-workspace
+.mcp.json.backup

@@ -54,6 +54,18 @@ myTribe-Development/
 
 ---
 
+## 🧹 Clean Code Principles
+
+1. **DRY (Don't Repeat Yourself)** - Extract reusable logic; use "Three Strikes Rule" (duplicate once OK, third time refactor)
+2. **Single Responsibility** - Each function/class/module has ONE reason to change
+3. **Intention-Revealing Names** - Variables are nouns, functions are verbs; names answer "why, what, how"
+4. **Small & Focused Functions** - Max 50 lines; one responsibility; extract helpers
+5. **Loose Coupling, High Cohesion** - Modules independent with minimal dependencies; related functionality grouped together
+
+📖 [Code Quality Standards](development-wiki/standards/code-quality.md)
+
+---
+
 ## 🔐 Security Rules
 
 1. Never commit secrets (use `.env` outside repos)

@@ -26,6 +26,7 @@ Develop robust PowerShell scripts for Windows automation, SharePoint data analys
 4. **Output**: Return objects, not formatted strings
 5. **Logging**: Write-Verbose for debug, Write-Error for errors
 6. **Testing**: Use Pester for unit tests
+7. **DRY principle**: Extract common logic into reusable functions in .psm1 modules
 
 **Script Structure Pattern**
 ```powershell

@@ -5,12 +5,20 @@
       "path": "."
     },
     {
-      "name": "📦 Website & Cloudflare",
-      "path": "website-and-cloudflare"
+      "name": "🚀 myTribe Origin",
+      "path": "mytribe-origin"
     },
     {
       "name": "🤖 AI Research Platform",
       "path": "mytribe-ai-research-platform"
+    },
+    {
+      "name": "📦 Website & Cloudflare",
+      "path": "website-and-cloudflare"
+    },
+    {
+      "name": "📝 Comparison Forms",
+      "path": "comparison-forms"
     },
     {
       "name": "📚 Development Wiki",
@@ -294,7 +302,8 @@
         "command": "node",
         "args": ["/tmp/test-mcp-server/server.js"]
       }
-    }
+    },
+    "terminal.integrated.gpuAcceleration": "off"
   },
   "extensions": {
     "recommendations": [

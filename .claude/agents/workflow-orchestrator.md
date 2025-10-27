@@ -150,6 +150,7 @@ Step 3: code-verifier validates all changes
 **Constraints**
 - Maximum 10 parallel agents at once (Claude Code limit)
 - Don't parallelize dependent tasks
+- Apply SRP when decomposing tasks: one agent, one responsibility per subtask
 - Always synthesize agent outputs (don't just concatenate)
 - Track progress with TodoWrite
 - Verify each agent completed successfully before proceeding

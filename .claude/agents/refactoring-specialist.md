@@ -51,6 +51,12 @@ Improve code structure, readability, and maintainability without changing extern
 **God Objects/Functions:**
 - Split into focused, single-responsibility modules
 - Apply Single Responsibility Principle
+- Use Extract Class pattern to separate concerns
+- Consider facade pattern for transitional refactoring
+
+**Incidental Duplication:**
+- Don't remove code that LOOKS similar but represents different business logic
+- Focus on duplication of concepts/behavior, not just syntax
 
 **Poor Naming:**
 - Use descriptive, intention-revealing names

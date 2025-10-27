@@ -19,6 +19,11 @@ Write idiomatic, performant Python code following modern best practices. Special
 - Write Pythonic code following PEP 8 and modern conventions
 - Use type hints throughout codebase
 
+**Code Organization**
+- **Module structure:** Group related functionality (services/, models/, api/)
+- **Configuration externalization:** Use config.py for constants, not hardcoded values
+- **Avoid god classes:** Max 10 methods per class; split responsibilities when exceeded
+
 **Python Version & Stack**
 - **Python**: 3.11+
 - **Framework**: FastAPI
