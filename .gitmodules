@@ -1,0 +1,9 @@
+[submodule "anthropic-references/claude-cookbooks"]
+	path = anthropic-references/claude-cookbooks
+	url = https://github.com/anthropics/claude-cookbooks
+[submodule "anthropic-references/prompt-eng-interactive-tutorial"]
+	path = anthropic-references/prompt-eng-interactive-tutorial
+	url = https://github.com/anthropics/prompt-eng-interactive-tutorial
+[submodule "anthropic-references/anthropic-on-aws"]
+	path = anthropic-references/anthropic-on-aws
+	url = https://github.com/aws-samples/anthropic-on-aws
