@@ -6,8 +6,9 @@ Multi-repository workspace for myTribe Insurance development projects.
 
 | Repository | Technology | Purpose | Status | Documentation |
 |-----------|-----------|---------|--------|---------------|
+| [mytribe-origin](mytribe-origin/) | TypeScript, Cloudflare Workers, AWS Bedrock | AI insurance research platform (MVP) | 🚀 Week 1 & 2 Complete | [README](mytribe-origin/README.md) |
 | [website-and-cloudflare](website-and-cloudflare/) | JavaScript, Cloudflare Workers | Webflow components + 7 Workers | ✅ Production | [README](website-and-cloudflare/README.md) |
-| [mytribe-ai-research-platform](mytribe-ai-research-platform/) | Python, React, Railway + Claude API | AI research database | ✅ Deployed v1.0.0 | [README](mytribe-ai-research-platform/README.md) |
+| [mytribe-ai-research-platform](mytribe-ai-research-platform/) | Python, React, Railway + Claude API | AI research database (v1 - legacy) | ✅ Deployed v1.0.0 | [README](mytribe-ai-research-platform/README.md) |
 | [comparison-forms](comparison-forms/) | HTML5, CSS3, JavaScript | Multi-step insurance quote forms | ✅ Active | [README](comparison-forms/README.md) |
 | [sharepoint-forensics](sharepoint-forensics/) | PowerShell | Data loss investigation | ✅ Active | [README](sharepoint-forensics/README.md) |
 | [powerbi-automation](powerbi-automation/) | Python, JavaScript | Power BI automation | ⏳ Planning | [README](powerbi-automation/README.md) |
@@ -45,12 +46,17 @@ All repositories share standards and workflows via the **[development-wiki](deve
 
 ```
 myTribe Development/
+├── mytribe-origin/                  # 🚀 NEW - AI research platform MVP (Week 1 & 2 ✅)
+│   ├── src/                         # TypeScript: auth, handlers, validators, workers
+│   ├── docs/                        # MVP implementation guides (80+ docs)
+│   ├── scripts/                     # Setup and deployment scripts
+│   └── supabase/                    # Database migrations (5 tables, RLS policies)
 ├── website-and-cloudflare/          # Production Webflow site + 7 Cloudflare Workers
 │   ├── Cloudflare/                  # 7 active workers + archived
 │   ├── src/                         # Webflow embed components
 │   ├── tests/                       # 259 automated tests
 │   └── docs/                        # Technical documentation
-├── mytribe-ai-research-platform/    # AI research database (✅ Deployed v1.0.0)
+├── mytribe-ai-research-platform/    # AI research database v1 (✅ Deployed v1.0.0 - legacy)
 │   ├── backend/                     # FastAPI + Claude API + LangChain (Railway)
 │   ├── frontend/                    # React (in progress)
 │   └── research-data/               # 11,893 pricing records + Datasette
@@ -68,11 +74,11 @@ myTribe Development/
 
 ## 📊 Workspace Statistics
 
-- **Total Repositories**: 6 (5 active + 1 wiki)
-- **Cloudflare Workers**: 7 active + 9 archived
-- **Automated Tests**: 259+ (62 unit, 27 E2E, 139 Worker, 31 accessibility)
-- **Documentation Files**: 67+
-- **Research Database Records**: 11,893 insurance plans
+- **Total Repositories**: 7 (6 active + 1 wiki)
+- **Cloudflare Workers**: 8+ active (7 production + 1 mytribe-origin-api) + 9 archived
+- **Automated Tests**: 365+ (106 mytribe-origin auth, 259 existing)
+- **Documentation Files**: 80+ (13 new mytribe-origin docs)
+- **Research Database Records**: 10,601 insurance pricing records (mytribe-origin)
 - **Team Members**: 14 documented in Person schema
 
 ## 🔐 Security
@@ -160,9 +166,11 @@ This workspace extensively uses **Claude Code** for development:
 
 ## 📅 Recent Updates
 
+- **2025-10-29**: mytribe-origin Week 1 & 2 complete - Backend API live (6-7 hours, 70% faster than estimate) 🚀
+- **2025-10-29**: 106/107 authentication tests passing, 18/20 Bedrock tests passing
+- **2025-10-29**: All endpoints deployed: /health, /auth/login, /chat/message, /conversations, /datasets
 - **2025-10-16**: mytribe-ai-research-platform deployed to Railway (v1.0.0) ✅
 - **2025-10-16**: Migrated from Google Cloud to Railway (£5-7/month cost savings)
-- **2025-10-16**: All documentation updated to reflect Railway deployment
 - **2025-10-15**: comparison-forms repository initialized with documentation
 - **2025-10-15**: Development wiki centralization complete (8 roles, 5 workflows)
 - **2025-10-15**: Security audit completed (9.2/10 risk score, reduced to 2.0/10)
@@ -175,6 +183,6 @@ This workspace extensively uses **Claude Code** for development:
 
 ---
 
-**Last Updated**: 2025-10-16
+**Last Updated**: 2025-10-29
 **Maintained By**: myTribe Development Team
-**Workspace Structure**: Multi-repository (6 repos)
+**Workspace Structure**: Multi-repository (7 repos: 6 active + 1 wiki)
