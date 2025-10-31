@@ -25,7 +25,12 @@ $env:GITHUB_PERSONAL_ACCESS_TOKEN
 - `GITHUB_PERSONAL_ACCESS_TOKEN` - GitHub token (repos, PRs, issues)
 - `NEON_API_KEY` - Neon PostgreSQL (dev/staging database branching)
 - `AUTH0_DOMAIN`, `AUTH0_CLIENT_ID`, `AUTH0_CLIENT_SECRET` - Auth0 (MCP OAuth 2.1)
-- `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION` - AWS Bedrock (AI models)
+- `MCP_AWS_ACCESS_KEY_ID`, `MCP_AWS_SECRET_ACCESS_KEY` - AWS Bedrock (MCP server, local development)
+- `AWS_REGION` - AWS region (us-east-1)
+
+**Production (Cloudflare Workers):**
+- Store as `CLOUDFLARE_AWS_ACCESS_KEY_ID`, `CLOUDFLARE_AWS_SECRET_ACCESS_KEY` in Bitwarden
+- Deploy to Cloudflare as `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` (runtime expects standard names)
 
 #### HTTP-Based Servers (Supabase, Cloudflare)
 Tokens must be in `.mcp.json` (Claude Code can't expand env vars in HTTP headers).

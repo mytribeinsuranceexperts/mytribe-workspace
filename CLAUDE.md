@@ -5,6 +5,9 @@
 ## 🎯 Core Rules
 
 1. **MCP Tools First** - Always use MCP tools (`mcp__*`) over CLI when available
+   - **Serena (`mcp__serena__*`)** - Semantic code navigation; use for exploring/editing code instead of reading entire files
+   - **Available MCP Servers:** supabase, github, railway, filesystem, memory, playwright, serena, cloudflare-docs, time, aws-bedrock-agentcore, antv-chart
+   - Use MCP versions over CLI when available
 2. **Latest Dependencies** - Use current stable versions, note breaking changes
 3. **Communication** - Concise, bulleted, factual. No emojis unless requested
 4. **Documentation Policy - STRICT**
@@ -90,7 +93,7 @@ myTribe-Development/
 
 ## 🤖 Specialized Agents
 
-**Location:** `.claude/agents/` (15 agents available)
+**Location:** `.claude/agents/` (19 agents available)
 
 **When user mentions keywords, ask if they want to load agent:**
 
@@ -111,6 +114,11 @@ myTribe-Development/
 | python, fastapi, async | python-specialist.md |
 | seo, meta tags, schema | seo-specialist.md |
 | coordinate, multi-step | workflow-orchestrator.md |
+| data pipeline, etl, transformation | data-engineer.md |
+| llm, ai integration, prompts | llm-integration-specialist.md |
+| mcp, tool server, claude desktop | mcp-architect.md |
+| verify data, validation, quality | data-verifier.md |
+| research, search, information | web-researcher.md |
 
 **Manual loading:** User can request `.claude/agents/<name>.md` directly
 
@@ -229,6 +237,38 @@ Default to this org for GitHub operations.
 
 ---
 
+## 🔌 MCP Servers
+
+**11 Available MCP Servers:**
+
+**Development & Infrastructure:**
+- **supabase** - Database management, auth, storage operations
+- **github** - Repository operations, PR/issue management, workflows
+- **railway** - Deployment, service management, logs, environment variables
+- **cloudflare-docs** - Documentation search and reference
+
+**Code Intelligence:**
+- **serena** - Semantic code navigation, intelligent editing, codebase exploration
+- **filesystem** - File operations with enhanced permissions
+- **memory** - Persistent memory across sessions
+
+**Testing & Automation:**
+- **playwright** - Browser automation, E2E testing, screenshots
+
+**Data & AI:**
+- **aws-bedrock-agentcore** - AWS Bedrock agent integration
+- **antv-chart** - Data visualization and chart generation
+
+**Utilities:**
+- **time** - Date/time operations, scheduling
+
+**Usage Priority:**
+1. Always prefer MCP tools over CLI equivalents
+2. Use Serena for code exploration instead of reading entire files
+3. Use specific MCP servers (github, railway, supabase) over generic CLI commands
+
+---
+
 ## 🎓 Remember
 
 **Hierarchical memory:**
@@ -240,6 +280,6 @@ Default to this org for GitHub operations.
 
 ---
 
-**Last Updated:** 2025-10-27 | **Team:** myTribe Insurance Experts
+**Last Updated:** 2025-10-31 | **Team:** myTribe Insurance Experts
 
 <!-- End of CLAUDE.md -->
