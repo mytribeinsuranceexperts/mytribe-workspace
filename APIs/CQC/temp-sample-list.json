@@ -1,0 +1,63 @@
+{
+  "total": 118958,
+  "firstPageUri": "/locations?page=1&perPage=10",
+  "page": 1,
+  "previousPageUri": null,
+  "lastPageUri": "/locations?page=11896&perPage=10",
+  "nextPageUri": "/locations?page=2&perPage=10",
+  "perPage": 10,
+  "totalPages": 11896,
+  "locations": [
+    {
+      "locationId": "1-10000302982",
+      "locationName": "Henley House",
+      "postalCode": "IP1 6TB"
+    },
+    {
+      "locationId": "1-10000367985",
+      "locationName": "Hertility Health",
+      "postalCode": "E11 3RB"
+    },
+    {
+      "locationId": "1-10000433668",
+      "locationName": "Home Visiting Service",
+      "postalCode": "NE8 4YL"
+    },
+    {
+      "locationId": "1-10000697432",
+      "locationName": "Vara Dental Practice",
+      "postalCode": "E12 6SA"
+    },
+    {
+      "locationId": "1-10000792582",
+      "locationName": "Orchids Care",
+      "postalCode": "DN4 9PE"
+    },
+    {
+      "locationId": "1-10000812939",
+      "locationName": "Charlotte House",
+      "postalCode": "CH63 3DZ"
+    },
+    {
+      "locationId": "1-10000813008",
+      "locationName": "Regency Care Centre",
+      "postalCode": "M45 7SG"
+    },
+    {
+      "locationId": "1-10001367005",
+      "locationName": "218 Smile Clinic",
+      "postalCode": "HA1 4JU"
+    },
+    {
+      "locationId": "1-10001408228",
+      "locationName": "Thistle24 Medical Group Ltd",
+      "postalCode": "S71 1AQ"
+    },
+    {
+      "locationId": "1-10001702698",
+      "locationName": "Custom Care (North Staffs)",
+      "postalCode": "ST3 5XA"
+    }
+  ],
+  "uri": "/locations"
+}

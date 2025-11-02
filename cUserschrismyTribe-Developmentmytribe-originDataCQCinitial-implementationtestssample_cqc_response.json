@@ -1,0 +1,113 @@
+{
+    "locationId": "1-10000367985",
+    "providerId": "1-9481116637",
+    "organisationType": "Location",
+    "type": "Independent Healthcare Org",
+    "name": "Hertility Health",
+    "onspdCcgCode": "E38000255",
+    "onspdCcgName": "NHS North East London CCG",
+    "onspdIcbCode": "E54000029",
+    "onspdIcbName": "NHS North East London Integrated Care Board",
+    "registrationStatus": "Deregistered",
+    "registrationDate": "2020-12-07",
+    "deregistrationDate": "2023-02-17",
+    "dormancy": "N",
+    "onspdLatitude": 51.5653928,
+    "onspdLongitude": 0.0291142,
+    "careHome": "N",
+    "inspectionDirectorate": "Primary medical services",
+    "postalAddressLine1": "59 Woodlands Avenue",
+    "postalAddressTownCity": "London",
+    "region": "London",
+    "postalCode": "E11 3RB",
+    "uprn": "100022261404",
+    "mainPhoneNumber": "07942747234",
+    "website": "www.hertilityhealth.com",
+    "numberOfBeds": 0,
+    "constituency": "Leyton and Wanstead",
+    "localAuthority": "Redbridge",
+    "lastInspection": {
+        "date": "2022-11-14"
+    },
+    "lastReport": {
+        "publicationDate": "2023-02-06"
+    },
+    "relationships": [
+        {
+            "relatedLocationId": "1-15004875002",
+            "relatedLocationName": "Hertility Health",
+            "type": "HSCA Successor",
+            "reason": "Location Move"
+        }
+    ],
+    "locationTypes": [],
+    "regulatedActivities": [],
+    "gacServiceTypes": [
+        {
+            "name": "Doctors/Gps",
+            "description": "Doctors treatment service"
+        }
+    ],
+    "specialisms": [
+        {
+            "name": "Caring for adults under 65 yrs"
+        }
+    ],
+    "inspectionCategories": [
+        {
+            "code": "P7",
+            "primary": "true",
+            "name": "Independent consulting doctors"
+        }
+    ],
+    "inspectionAreas": [],
+    "currentRatings": {
+        "overall": {
+            "rating": "Good",
+            "reportDate": "2023-02-06",
+            "reportLinkId": "78a32ec2-121a-4687-a733-65d8f0898d4d",
+            "keyQuestionRatings": [
+                {
+                    "name": "Safe",
+                    "rating": "Good",
+                    "reportDate": "2023-02-06",
+                    "reportLinkId": "78a32ec2-121a-4687-a733-65d8f0898d4d"
+                },
+                {
+                    "name": "Well-led",
+                    "rating": "Good",
+                    "reportDate": "2023-02-06",
+                    "reportLinkId": "78a32ec2-121a-4687-a733-65d8f0898d4d"
+                },
+                {
+                    "name": "Caring",
+                    "rating": "Good",
+                    "reportDate": "2023-02-06",
+                    "reportLinkId": "78a32ec2-121a-4687-a733-65d8f0898d4d"
+                },
+                {
+                    "name": "Responsive",
+                    "rating": "Good",
+                    "reportDate": "2023-02-06",
+                    "reportLinkId": "78a32ec2-121a-4687-a733-65d8f0898d4d"
+                },
+                {
+                    "name": "Effective",
+                    "rating": "Good",
+                    "reportDate": "2023-02-06",
+                    "reportLinkId": "78a32ec2-121a-4687-a733-65d8f0898d4d"
+                }
+            ]
+        },
+        "reportDate": "2023-02-06"
+    },
+    "reports": [
+        {
+            "linkId": "78a32ec2-121a-4687-a733-65d8f0898d4d",
+            "reportDate": "2023-02-06",
+            "firstVisitDate": "2022-11-14",
+            "reportUri": "/reports/78a32ec2-121a-4687-a733-65d8f0898d4d?20230206120044",
+            "reportType": "Location"
+        }
+    ]
+}

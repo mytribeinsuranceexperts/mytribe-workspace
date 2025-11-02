@@ -1,0 +1,23 @@
+{
+  "total_locations_found": 10,
+  "locations_processed": 0,
+  "providers_created": 0,
+  "facilities_created": 0,
+  "facilities_updated": 0,
+  "api_calls_made": 17,
+  "duration_seconds": 9.826780319213867,
+  "errors": [
+    "Error upserting provider 1-9548424788: [Errno 11001] getaddrinfo failed",
+    "Error processing location 1-10014315569: [Errno 11001] getaddrinfo failed",
+    "Error upserting provider 1-983441221: [Errno 11001] getaddrinfo failed",
+    "Error processing location 1-1001899520: [Errno 11001] getaddrinfo failed",
+    "Error upserting provider 1-983441221: [Errno 11001] getaddrinfo failed",
+    "Error processing location 1-1001911572: [Errno 11001] getaddrinfo failed",
+    "Error upserting provider 1-9398510142: [Errno 11001] getaddrinfo failed",
+    "Error processing location 1-10022600059: [Errno 11001] getaddrinfo failed",
+    "Error upserting provider 1-443753979: [Errno 11001] getaddrinfo failed",
+    "Error processing location 1-10154883924: [Errno 11001] getaddrinfo failed",
+    "Error upserting provider 1-997316495: [Errno 11001] getaddrinfo failed",
+    "Error processing location 1-1015603399: [Errno 11001] getaddrinfo failed"
+  ]
+}

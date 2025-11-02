@@ -1,0 +1,111 @@
+# Workspace-Level .gitignore
+# This workspace contains multiple independent git repositories
+# We only want to track workspace-level configuration files
+
+# ============================================
+# EXCLUDE ALL SUBDIRECTORY REPOSITORIES
+# ============================================
+# Each of these is its own git repo with separate GitHub repos
+comparison-forms/
+development-wiki/
+mytribe-ai-research-platform/
+mytribe-origin/
+powerbi-automation/
+sharepoint-forensics/
+website-and-cloudflare/
+ai-video-generation/
+voice-terminal-control/
+health-insurance-comparison-system/
+
+# ============================================
+# EXCLUDE DIRECTORIES WITH DATA/SECRETS
+# ============================================
+api-keys/
+data/
+docs/
+.config/
+.ms-ad/
+.websiteauditor/
+.wrangler/
+prompt-optimization-review/
+tmux-manager-extension/
+myTribe Development/
+OLD/
+
+# ============================================
+# EXCLUDE TEMPORARY & BUILD FILES
+# ============================================
+nul
+c:Userschristemp_login.json
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+desktop.ini
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# EXCLUDE VS CODE & CLAUDE INTERNALS
+# ============================================
+.vscode/
+
+# Claude internals to exclude
+.claude/file-history/
+.claude/todos/
+.claude/projects/
+.claude/shell-snapshots/
+.claude/downloads/
+.claude/.credentials.json
+.claude/settings.local.json
+.claude/history.jsonl
+.claude/statsig/
+.claude/debug/
+.claude/ide/
+.claude/plugins/
+.claude/*.ps1
+
+# Keep .claude/agents/ and .claude/commands/ (workspace configuration)
+
+# ============================================
+# EXCLUDE IDE FILES
+# ============================================
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# EXCLUDE ENV FILES (SECRETS)
+# ============================================
+.env
+.env.local
+.env.*.local
+
+# MCP configuration with secrets
+.mcp.json
+
+# ============================================
+# EXCLUDE DEPENDENCIES
+# ============================================
+node_modules/
+__pycache__/
+*.pyc
+
+# ============================================
+# FILES TO INCLUDE (workspace-level only)
+# ============================================
+# These will be tracked:
+# - CLAUDE.md (workspace-level instructions)
+# - myTribe-Development.code-workspace (VS Code workspace config)
+# - README.md (workspace documentation)
+# - .mcp.json.example (MCP server template - safe)
+# - *.sh scripts (workspace utilities)
+# - *.md documentation files (workspace-level only)
+#
+# Note: .mcp.json is excluded (contains secrets)
+# Note: We negate the *.code-workspace exclusion to include workspace config
+!myTribe-Development.code-workspace
+.mcp.json.backup

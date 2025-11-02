@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "fetchedAt": "2025-11-02T14:57:22.141Z",
+    "sampleSize": 150
+  },
+  "organizationTypes": {
+    "all": {
+      "Social Care Org": 132,
+      "Primary Dental Care": 11,
+      "Independent Healthcare Org": 5,
+      "Primary Medical Services": 1,
+      "Independent Ambulance": 1
+    },
+    "examples": {
+      "Social Care Org": [
+        {
+          "name": "Girassol Community Care (Huntingdonshire)",
+          "careHome": "N",
+          "directorate": "Adult social care",
+          "services": "Homecare agencies"
+        },
+        {
+          "name": "Coastal Homecare (Worthing)",
+          "careHome": "N",
+          "directorate": "Adult social care",
+          "services": "Homecare agencies"
+        },
+        {
+          "name": "The Old Post Office",
+          "careHome": "N",
+          "directorate": "Adult social care",
+          "services": "Supported living"
+        },
+        {
+          "name": "Nurse Plus UK - Truro",
+          "careHome": "N",
+          "directorate": "Adult social care",
+          "services": "Homecare agencies"
+        },
+        {
+          "name": "Voyage(DCA) Greater Manchester",
+          "careHome": "N",
+          "directorate": "Adult social care",
+          "services": "Homecare agencies, Supported living"
+        }
+      ],
+      "Primary Dental Care": [
+        {
+          "name": "Same Day Dentist",
+          "careHome": "N",
+          "directorate": "Primary medical services",
+          "services": "Dentist"
+        },
+        {
+          "name": "Park House Dental Surgery Brinnington Health Centre",
+          "careHome": "N",
+          "directorate": "Primary medical services",
+          "services": "Dentist"
+        },
+        {
+          "name": "The Park House Dental Practice and Cosmetic Centre",
+          "careHome": "N",
+          "directorate": "Primary medical services",
+          "services": "Dentist"
+        },
+        {
+          "name": "R K Nagpaul and Associates",
+          "careHome": "N",
+          "directorate": "Primary medical services",
+          "services": "Dentist"
+        },
+        {
+          "name": "HMP Dovegate",
+          "careHome": "N",
+          "directorate": "Primary medical services",
+          "services": "Dentist"
+        }
+      ],
+      "Independent Healthcare Org": [
+        {
+          "name": "Ultrasound Direct Southwest",
+          "careHome": "N",
+          "directorate": "Hospitals",
+          "services": "Diagnosis/screening"
+        },
+        {
+          "name": "Wigan and Leigh Hospice",
+          "careHome": "N",
+          "directorate": "Hospitals",
+          "services": "Hospice"
+        },
+        {
+          "name": "Moya Cole Hospice Heald Green",
+          "careHome": "N",
+          "directorate": "Hospitals",
+          "services": "Hospice"
+        },
+        {
+          "name": "Meet My Baby Wigan",
+          "careHome": "N",
+          "directorate": "Hospitals",
+          "services": "Diagnosis/screening"
+        },
+        {
+          "name": "Prinsted",
+          "careHome": "Y",
+          "directorate": "Hospitals",
+          "services": "Residential homes, Rehabilitation (substance abuse)"
+        }
+      ],
+      "Primary Medical Services": [
+        {
+          "name": "Woodhill Surgery",
+          "careHome": "N",
+          "directorate": "Primary medical services",
+          "services": "Doctors/Gps"
+        }
+      ],
+      "Independent Ambulance": [
+        {
+          "name": "Combined Medical Services Limited",
+          "careHome": "N",
+          "directorate": "Hospitals",
+          "services": "Ambulances"
+        }
+      ]
+    }
+  }
+}

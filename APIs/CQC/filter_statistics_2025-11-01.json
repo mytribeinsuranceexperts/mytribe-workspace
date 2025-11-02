@@ -1,0 +1,17 @@
+{
+  "total": 204,
+  "withBeds": 127,
+  "withoutBeds": 77,
+  "filterCriteria": {
+    "included": "serviceTypes includes \"Hospital\"",
+    "excluded": "serviceTypes includes \"Mental health\""
+  },
+  "filterDate": "2025-11-02T07:40:31.239Z",
+  "sourceFile": "uk_private_hospitals_all_2025-11-01.json",
+  "bedStatistics": {
+    "min": 6,
+    "max": 266,
+    "median": 47,
+    "average": 54
+  }
+}

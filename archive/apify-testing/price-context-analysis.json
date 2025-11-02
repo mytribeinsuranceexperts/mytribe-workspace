@@ -1,0 +1,12 @@
+{
+  "totalPrices": 0,
+  "analyzed": 0,
+  "summary": {
+    "financeCount": 0,
+    "depositCount": 0,
+    "consultationCount": 0,
+    "guideCount": 0,
+    "actualPriceCount": 0
+  },
+  "contexts": []
+}

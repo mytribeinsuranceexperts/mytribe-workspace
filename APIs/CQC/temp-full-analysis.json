@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "fetchedAt": "2025-11-02T14:45:14.747Z",
+    "sampleSize": 80,
+    "totalLocations": 118958,
+    "samplingMethod": "Multiple pages across database"
+  },
+  "categories": {
+    "type": {
+      "Social Care Org": 40,
+      "Independent Healthcare Org": 5,
+      "Primary Medical Services": 20,
+      "Primary Dental Care": 14,
+      "Independent Ambulance": 1
+    },
+    "inspectionDirectorate": {
+      "Adult social care": 30,
+      "Primary medical services": 38,
+      "Hospitals": 1,
+      "Unspecified": 11
+    },
+    "careHome": {
+      "Y": 16,
+      "N": 64
+    },
+    "registrationStatus": {
+      "Registered": 43,
+      "Deregistered": 37
+    },
+    "gacServiceTypes": {
+      "Residential homes - Care home service without nursing": 9,
+      "Doctors/Gps - Doctors treatment service": 4,
+      "Doctors/Gps - Doctors consultation service": 20,
+      "Mobile doctors - Mobile doctors service": 1,
+      "Dentist - Dental service": 14,
+      "Homecare agencies - Domiciliary care service": 24,
+      "Nursing homes - Care home service with nursing": 7,
+      "Ambulances - Ambulance service": 1,
+      "Community services - Nursing - Community health care services - Nurses Agency only": 1,
+      "Phone/online advice - Remote clinical advice service": 1,
+      "Rehabilitation (illness/injury) - Rehabilitation services": 1,
+      "Supported living - Supported living service": 1
+    },
+    "specialisms": {
+      "Caring for adults over 65 yrs": 33,
+      "Dementia": 31,
+      "Physical disabilities": 30,
+      "Sensory impairment": 20,
+      "Caring for adults under 65 yrs": 31,
+      "Services for everyone": 38,
+      "Learning disabilities": 10,
+      "Mental health conditions": 24,
+      "Caring for people whose rights are restricted under the Mental Health Act": 1,
+      "Eating disorders": 2,
+      "Substance misuse problems": 2,
+      "Caring for children": 2
+    },
+    "inspectionCategories": {
+      "Residential social care": 14,
+      "Independent consulting doctors": 4,
+      "Out of hours": 1,
+      "Urgent care services & mobile doctors": 1,
+      "Dentists": 13,
+      "Community based adult social care services": 16,
+      "Ambulance service": 1,
+      "Remote clinical advice": 1,
+      "Community health - NHS & Independent": 1,
+      "GP Practices": 19
+    },
+    "regulatedActivities": {
+      "Accommodation for persons who require nursing or personal care": 11,
+      "Treatment of disease, disorder or injury": 29,
+      "Surgical procedures": 22,
+      "Diagnostic and screening procedures": 24,
+      "Personal care": 8,
+      "Maternity and midwifery services": 14,
+      "Family planning": 12
+    }
+  }
+}

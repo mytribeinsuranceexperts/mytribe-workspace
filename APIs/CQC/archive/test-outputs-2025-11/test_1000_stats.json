@@ -1,0 +1,12 @@
+{
+  "total_locations_found": 700,
+  "locations_processed": 363,
+  "providers_created": 258,
+  "facilities_created": 363,
+  "facilities_updated": 0,
+  "api_calls_made": 967,
+  "duration_seconds": 608.4811465740204,
+  "errors": [
+    "Error processing location 1-109580499: {'message': 'new row for relation \"cqc_facilities\" violates check constraint \"cqc_facilities_overall_rating_check\"', 'code': '23514', 'hint': None, 'details': 'Failing row contains (1-109580499, 1-101634302, The Fertility & Gynaecology Academy, null, {\"county\": null, \"town_city\": \"London\", \"postal_code\": \"W1G 8YP\"..., null, null, null, {Doctors/Gps}, [{\"name\": \"Caring for adults under 65 yrs\"}], {\"Treatment of disease, disorder or injury\",\"Surgical procedures..., Registered, 2010-12-17, No published rating, Hospitals, 02072241880, www.fertility-academy.co.uk, 2014-01-16, null, null, 2025-11-02 18:30:51.69229+00, 2025-11-02 18:30:51.69229+00, 2025-11-02 18:30:51.69229+00, null, {\"name\": \"The Fertility & Gynaecology Academy\", \"type\": \"Indepen...).'}"
+  ]
+}

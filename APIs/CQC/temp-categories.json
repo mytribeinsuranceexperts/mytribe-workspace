@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "fetchedAt": "2025-11-02T14:43:47.209Z",
+    "sampleSize": 1000,
+    "totalLocations": 1000
+  },
+  "categories": {
+    "organizationTypes": {},
+    "inspectionDirectorates": {},
+    "serviceTypes": {},
+    "specialisms": {},
+    "careHome": {
+      "Y": 0,
+      "N": 0,
+      "unknown": 1000
+    },
+    "registrationStatus": {}
+  }
+}

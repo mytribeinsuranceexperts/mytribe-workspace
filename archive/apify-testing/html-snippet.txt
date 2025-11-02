@@ -1,0 +1,88 @@
+<!DOCTYPE html><html class="js f-notouch" lang="en"><head>
+    <meta charset="utf-8">
+
+    <script type="text/javascript" charset="UTF-8" async="" src="https://consent.cookiebot.com/71f1e029-9b10-46d1-8acc-73157b927827/cc.js?renew=false&amp;referer=www.circlehealthgroup.co.uk&amp;dnt=false&amp;init=false"></script><script type="text/javascript" async="" src="https://consent.cookiebot.com/uc.js?cbid=71f1e029-9b10-46d1-8acc-73157b927827&amp;implementation=gtm&amp;consentmode-dataredaction=dynamic" id="Cookiebot"></script><script async="" src="https://script.infinity-tracking.com/infinitytrack.js?i=5119"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WDQZ8HM"></script><script>
+var elements = document.getElementsByClassName('grecaptcha-error');    
+if(elements.length > 0) { 
+elements[0].style.display ='none'; 
+}
+</script>
+<!-- Google Tag Manager -->
+<script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDQZ8HM');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- Prefetch the DNS for externally hosted files - http://goo.gl/TOCXgm -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0">
+
+    <!-- <link rel="dns-prefetch" href="https://www.google-analytics.com"> -->
+    <!--
+    Local fonts should be pre-loaded this way. Browsers that support woff2 also support preload
+    so there is no danger of this method, only benefits
+    <link rel="preload" href="/assets/fonts/font-folder/font-name.woff2" crossorigin="anonymous" as="font">
+    -->
+
+    <link rel="preload" href="/assets/dist/fonts/lato-v23-latin-regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/assets/dist/fonts/lato-v23-latin-300.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/assets/dist/fonts/lato-v23-latin-700.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/assets/dist/fonts/lato-v23-latin-900.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/assets/dist/fonts/lato-v23-latin-italic.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" as="image" href="/assets/dist/images/logo.svg" type="image/svg+xml">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="/assets/dist/css/main.css?v=638937026920000000" rel="stylesheet">
+<link href="/assets/dist/css/components/consultants-listing.css?v=638937026920000000" rel="stylesheet">
+<link href="/assets/dist/css/components/specialist-overview.css?v=638937026920000000" rel="stylesheet">
+<link href="/assets/dist/css/components/specialist-mobile-overview.css?v=638937026920000000" rel="stylesheet">
+
+
+    <!-- Viewport Meta-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,user-scalable=1,viewport-fit=cover">
+
+    <!-- Favicons - use http://realfavicongenerator.net/ to generate -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/dist/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/dist/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/dist/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/dist/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/dist/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#1899f5">
+
+    
+
+    <title>Treatments Prices | The Beardwood Hospital Blackburn</title>
+    <meta name="description" content="Our treatment prices at The Beardwood Hospital include information about the cost of surgery, initial consultation, treatment and aftercare.">
+    <meta name="author" content="Circle Health Group">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="Circle Health Group">
+    <link rel="canonical" href="https://www.circlehealthgroup.co.uk/hospitals/the-beardwood-hospital/treatments-prices">
+
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "ItemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.circlehealthgroup.co.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hospitals",
+          "item": "https://www.circlehealthgroup.co.uk/hospitals"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Beardwood Hospital",
+ 

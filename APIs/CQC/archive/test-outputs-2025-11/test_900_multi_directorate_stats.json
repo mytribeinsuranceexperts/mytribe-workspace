@@ -1,0 +1,30 @@
+{
+  "directorate_stats": [
+    {
+      "name": "Hospitals (H3/H4)",
+      "locations_found": 0,
+      "locations_processed": 0,
+      "api_calls": 9
+    },
+    {
+      "name": "GPs",
+      "locations_found": 0,
+      "locations_processed": 0,
+      "api_calls": 18
+    },
+    {
+      "name": "Dentists",
+      "locations_found": 0,
+      "locations_processed": 0,
+      "api_calls": 27
+    }
+  ],
+  "total_locations_found": 0,
+  "locations_processed": 0,
+  "providers_created": 0,
+  "facilities_created": 0,
+  "facilities_updated": 0,
+  "api_calls_made": 27,
+  "duration_seconds": 15.967373847961426,
+  "errors": []
+}

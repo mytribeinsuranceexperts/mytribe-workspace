@@ -1,0 +1,16 @@
+{
+  "name": "time-mcp-server",
+  "version": "1.0.0",
+  "description": "Simple MCP server that provides current date and time",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0"
+  },
+  "keywords": ["mcp", "time", "date"],
+  "author": "myTribe Insurance",
+  "license": "MIT"
+}

@@ -1,0 +1,267 @@
+===========================================
+PLAYWRIGHT METHOD - HOSPITAL PRICING EXTRACTION
+===========================================
+
+EXTRACTION TECHNIQUE: Adaptive Playwright-based web scraping
+COMPATIBLE GROUPS: Ramsay Health Care, Nuffield Health
+INCOMPATIBLE: Circle Health Group (Cloudflare Bot Manager)
+
+===========================================
+WORKFLOW ORCHESTRATOR INSTRUCTIONS
+===========================================
+
+ROLE: Coordinate batch processing of multiple hospitals using web-researcher subagents
+
+STEP 1: LOAD AND FILTER HOSPITALS
+1. Read hospital-urls.json from: C:\Users\chris\myTribe-Development\Research\hospital-urls.json
+2. Filter to ONLY hospitals where "method": "Playwright"
+3. SKIP hospitals with:
+   - "method": null
+   - "method": any value other than "Playwright"
+   - "status": "failed"
+4. Group hospitals by provider key (ramsay_health, nuffield_health, etc.)
+
+STEP 2: CREATE FOLDER STRUCTURE
+Base path: C:\Users\chris\myTribe Insurance\myTribe Team Site - Documents\Data & Research\Private Medical Treatment - CC\
+
+For EACH provider group found, create folders if they don't exist:
+- Ramsay\ (for ramsay_health)
+- Nuffield-Health\ (for nuffield_health)
+- Independent-Hospitals\ (for any other unmapped groups)
+
+Within EACH group folder, create these subfolders:
+- _RAW-DATA\      (CSV files)
+- _SCREENSHOTS\   (PNG files)
+- _HTML\          (HTML source files)
+
+Provider Mapping:
+- ramsay_health → Ramsay
+- nuffield_health → Nuffield-Health
+- * (unmapped) → Independent-Hospitals
+
+STEP 3: BATCH PROCESSING
+- Process hospitals in batches of 5 URLs at a time
+- Launch 5 web-researcher subagents in PARALLEL per batch (single message with 5 Task tool calls)
+- Each subagent processes ONE hospital URL independently
+- Wait for all 5 to complete before starting next batch
+- Log results after each batch
+
+STEP 4: POST-BATCH ACTIONS
+After each batch completes:
+1. Verify all expected files were created
+2. Log successes and failures for the batch
+3. Report any Cloudflare blocks or errors
+4. Clean up any temporary files
+5. Continue to next batch
+
+STEP 5: FINAL SUMMARY
+Create summary log file:
+Path: C:\Users\chris\myTribe Insurance\myTribe Team Site - Documents\Data & Research\Private Medical Treatment - CC\{date}-extraction-summary.txt
+
+Include:
+- Total hospitals processed
+- Successes vs failures per group
+- Total treatments extracted across all hospitals
+- Cloudflare blocks encountered
+- Processing time
+- Any errors or warnings
+
+===========================================
+WEB-RESEARCHER SUBAGENT INSTRUCTIONS
+===========================================
+
+TASK: Extract treatment pricing data from ONE hospital URL
+
+INPUTS YOU WILL RECEIVE:
+- Hospital URL
+- Hospital name
+- Provider group (for folder routing)
+- Collection date (ISO format YYYY-MM-DD)
+
+ADAPTIVE EXTRACTION APPROACH (CATEGORY-FIRST):
+
+1. **Page Analysis Phase**:
+   - Launch headless Chromium browser
+   - Navigate to URL with waitUntil: 'networkidle'
+   - Take full page screenshot (save for later)
+   - Save complete HTML source (save for later)
+
+2. **PHASE 1: Discover Categories** (OPTIONAL):
+   Scan for heading elements (h2, h3, h4) that represent medical categories/specialties
+   Common patterns: "Orthopaedics", "Surgery", "Diagnostics", "ENT", etc.
+
+   **Category Detection Priority:**
+   - Priority 1: h2 elements with [id] attributes
+   - Priority 2: h3 elements that precede treatment groups
+   - Priority 3: Semantic headings with medical specialty terms
+
+   **FILTER OUT Non-Medical Categories:**
+   EXCLUDE headings containing (case-insensitive):
+   - "privacy", "cookie", "preference", "consent"
+   - "terms", "conditions", "policy"
+   - "navigation", "menu", "footer", "header"
+
+   **IF NO CATEGORIES FOUND:**
+   - Set treatmentCategory to empty string "" for all treatments
+   - Continue to treatment extraction
+
+3. **PHASE 2: Find Treatment Blocks**:
+
+   **WITH Categories:**
+   - For each category, scan DOM elements AFTER that heading
+   - Find repeating elements containing prices (£ symbols)
+   - Stop at next category heading
+
+   **WITHOUT Categories:**
+   - Scan entire page for repeating elements with prices
+   - Extract all treatments as single group
+
+   **Structure Detection Strategies:**
+   - Strategy A: Accordion/collapsible items
+   - Strategy B: Lists (ul/ol) or divs with repeated structure
+   - Strategy C: Table rows grouped by sections
+
+4. **PHASE 3: Extract Data** (using page.evaluate()):
+   - Extract treatment name and "from" price from COLLAPSED state only
+   - Extract numeric price only (strip £, commas, text)
+   - Match treatments to categories if they exist
+
+PRICE FILTERING RULES (CRITICAL):
+
+✅ **INCLUDE:**
+- Primary "from" price for each treatment
+- Prices labeled "From £X,XXX" or similar
+- Full procedure costs
+
+❌ **EXCLUDE:**
+- Prices near keywords: deposit, monthly, payment plan, finance, credit, APR, interest
+- Prices with suffixes: /month, /week, per month, per week
+- Prices in expandable sections (payment schedules)
+- DO NOT expand accordion sections
+
+**VALIDATION:**
+- Treatment prices typically £100-£50,000
+- Flag prices outside this range
+- Do NOT filter short treatment names (e.g., "CT" is valid)
+- When uncertain, INCLUDE the treatment (false positives > missing data)
+
+CSV OUTPUT FORMAT:
+
+**Column Order (8 columns):**
+1. Hospital Name
+2. Treatment Name
+3. Treatment Category (empty string if none)
+4. Price (integer, no £ or commas)
+5. Price Type ("From", "Guide", etc.)
+6. Notes (empty string for now)
+7. Page URL (full URL)
+8. Collection Date (YYYY-MM-DD)
+
+**Example Row:**
+```csv
+Hospital Name,Treatment Name,Treatment Category,Price,Price Type,Notes,Page URL,Collection Date
+"Exeter Hospital","Hip Replacement","Orthopaedics",18305,"From","","https://www.nuffieldhealth.com/hospitals/exeter/pricing","2025-10-31"
+```
+
+**CSV Requirements:**
+- Include header row
+- Quote all text fields
+- Price as integer only (no quotes, no £, no commas)
+- Hospital Name and Collection Date repeat for every row
+- Page URL repeats for every row
+- Empty string for missing Treatment Category or Notes
+
+FILE NAMING CONVENTION:
+
+Format: {date}-{group-slug}-{hospital-slug}.{ext}
+
+Examples:
+- 2025-11-01-nuffield-health-exeter-hospital.csv
+- 2025-11-01-ramsay-ashtead-hospital.png
+- 2025-11-01-independent-hospitals-example-hospital.html
+
+Group Slugs:
+- ramsay_health → "ramsay"
+- nuffield_health → "nuffield-health"
+- Other → "independent-hospitals"
+
+Hospital Slugs:
+- Extract from URL or hospital name
+- Use kebab-case (lowercase with hyphens)
+- Example: "Exeter Hospital" → "exeter-hospital"
+
+OUTPUT FILES (3 per hospital):
+
+1. **{date}-{group}-{hospital}.csv**
+   Save to: {Group-Folder}\_RAW-DATA\
+   Contains: All treatment pricing data in CSV format
+
+2. **{date}-{group}-{hospital}.png**
+   Save to: {Group-Folder}\_SCREENSHOTS\
+   Contains: Full page screenshot
+
+3. **{date}-{group}-{hospital}.html**
+   Save to: {Group-Folder}\_HTML\
+   Contains: Complete page HTML source
+
+**Example Paths:**
+- C:\Users\chris\myTribe Insurance\myTribe Team Site - Documents\Data & Research\Private Medical Treatment - CC\Nuffield-Health\_RAW-DATA\2025-11-01-nuffield-health-exeter-hospital.csv
+- C:\Users\chris\myTribe Insurance\myTribe Team Site - Documents\Data & Research\Private Medical Treatment - CC\Nuffield-Health\_SCREENSHOTS\2025-11-01-nuffield-health-exeter-hospital.png
+- C:\Users\chris\myTribe Insurance\myTribe Team Site - Documents\Data & Research\Private Medical Treatment - CC\Nuffield-Health\_HTML\2025-11-01-nuffield-health-exeter-hospital.html
+
+CLEANUP REQUIREMENTS:
+
+After saving all 3 files:
+- DELETE any temporary .js script files
+- DELETE any intermediate JSON files
+- DELETE any other temporary artifacts
+- Only keep the 3 required output files
+
+CLOUDFLARE PROTECTION HANDLING:
+
+If site is blocked by Cloudflare Bot Manager:
+1. Capture screenshot of block page → save to _SCREENSHOTS\
+2. Save HTML of block page → save to _HTML\
+3. Create empty CSV with header row only → save to _RAW-DATA\
+4. Return status to orchestrator: "BLOCKED - Cloudflare"
+5. Log the block with clear explanation
+6. Continue (don't fail entire batch)
+
+RETURN TO ORCHESTRATOR:
+
+Report back:
+- Hospital name
+- Status: SUCCESS | BLOCKED | FAILED
+- Treatment count (0 if blocked/failed)
+- File paths created
+- Any errors or warnings
+- Processing time
+
+===========================================
+DATA QUALITY NOTES
+===========================================
+
+**Price Type Values:**
+- "From" - Most common (minimum starting price)
+- "Guide" - Guide price
+- "Fixed" - Fixed price (rare)
+- Extract exact text from page, standardize to title case
+
+**Treatment Names:**
+- Preserve exact text from page
+- Include any pricing info in name if present (will be in original data)
+- Do NOT modify or clean treatment names
+
+**Categories:**
+- Empty string "" if page has no categories
+- Exact heading text if categories exist
+- One category per treatment
+
+**Hospital Names:**
+- Extract from page title, h1, or URL
+- Format: "{Name} Hospital" (e.g., "Exeter Hospital", "Ashtead Hospital")
+- Consistent across all rows from same URL
+
+===========================================
+END OF PROMPT
+===========================================
