@@ -5,10 +5,12 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:http": "node http-server.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.6.0"
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "express": "^4.21.2"
   },
   "keywords": ["mcp", "time", "date"],
   "author": "myTribe Insurance",

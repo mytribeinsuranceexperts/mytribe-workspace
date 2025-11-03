@@ -7,8 +7,8 @@
 **Why these rules exist:** You have violated documentation policies 18+ times this month, creating unnecessary files, ignoring path standards, and duplicating content. These rules are ABSOLUTE.
 
 1. **MCP Tools First** - Always use MCP tools (`mcp__*`) over CLI when available
-   - **Serena (`mcp__serena__*`)** - Semantic code navigation; use for exploring/editing code instead of reading entire files
-   - **Available MCP Servers:** supabase, github, railway, filesystem, memory, serena, cloudflare-docs, time, aws-bedrock-agentcore, antv-chart
+   - **Available MCP Servers:** supabase, github, railway, filesystem, memory, cloudflare-docs, aws-bedrock-agentcore, antv-chart, bigquery, airtable, powerbi
+   - **Data Access:** BigQuery (mytribe-bi project), Airtable (Sync for BI base), Power BI (myTribe workspace)
    - Use MCP versions over CLI when available
 
 2. **Latest Dependencies** - Use current stable versions, note breaking changes
@@ -96,8 +96,8 @@
 ```
 myTribe-Development/
 ├── development-wiki/          # Shared standards, workflows
-├── mytribe-ai-research-platform/  # Python, React, PostgreSQL/Railway
-├── mytribe-origin/            # Original platform (legacy)
+├── mytribe-ai-research-platform/  # Python, React, PostgreSQL/Railway (v1.0.0 deployed)
+├── mytribe-origin/            # TypeScript MVP - AI insurance research (Week 3 complete, CQC integration active)
 ├── website-and-cloudflare/    # JS, Cloudflare Workers
 ├── comparison-forms/          # React 19, TypeScript, Vite
 ├── sharepoint-forensics/      # PowerShell automation
@@ -320,7 +320,7 @@ Default to this org for GitHub operations.
 
 ## 🔌 MCP Servers
 
-**11 Available MCP Servers:**
+**14 Available MCP Servers:**
 
 **Development & Infrastructure:**
 
@@ -331,28 +331,22 @@ Default to this org for GitHub operations.
 
 **Code Intelligence:**
 
-- **serena** - Semantic code navigation, intelligent editing, codebase exploration
 - **filesystem** - File operations with enhanced permissions
 - **memory** - Persistent memory across sessions
 
-**Testing & Automation:**
+**Data & Business Intelligence:**
 
-- **playwright** - Browser automation, E2E testing, screenshots
-
-**Data & AI:**
-
+- **bigquery** - SQL queries on mytribe-bi GCP project (read-only, 1GB limit per query)
+- **airtable** - Full CRUD access to "Sync for BI" base (lead performance data)
+- **powerbi** - Connect to myTribe workspace datasets, execute DAX queries, query data models
 - **aws-bedrock-agentcore** - AWS Bedrock agent integration
 - **antv-chart** - Data visualization and chart generation
-
-**Utilities:**
-
-- **time** - Date/time operations, scheduling
 
 **Usage Priority:**
 
 1. Always prefer MCP tools over CLI equivalents
-2. Use Serena for code exploration instead of reading entire files
-3. Use specific MCP servers (github, railway, supabase) over generic CLI commands
+2. Use specific MCP servers (github, railway, supabase, bigquery, powerbi) over generic CLI commands
+3. For data investigation: bigquery for raw data, airtable for lead sources, powerbi for report structure
 
 ---
 
