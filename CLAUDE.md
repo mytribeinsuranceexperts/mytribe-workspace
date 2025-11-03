@@ -16,15 +16,47 @@
 3. **Communication** - Concise, bulleted, factual. No emojis unless requested
 
 4. **Documentation Policy - ABSOLUTELY FORBIDDEN TO VIOLATE**
-   - ❌ **NEVER create .md files** (README, CHANGELOG, guides, session notes, architecture docs)
+
+   **APPROVED Locations for .md files:**
+   - ✅ **development-wiki/** - Shared standards, workflows, guides, infrastructure
+   - ✅ **{repo}/** - Project-specific README.md, CLAUDE.md, CHANGELOG.md only
+   - ✅ **.claude/agents/** - Agent persona files (readonly - don't edit)
+   - ✅ **archive/** - Superseded docs with date prefix (YYYY-MM-DD-description/)
+
+   **FORBIDDEN Locations:**
+   - ❌ **Workspace root** (except CLAUDE.md, README.md, BITWARDEN.md)
+   - ❌ **Random subdirectories** (Data/, Research/, API/, Temp/, etc.)
+   - ❌ **Temporary planning files** (use git branches instead)
+   - ❌ **Session notes in project root** (archive immediately)
+
+   **Rules:**
    - ✅ **ONLY update existing files** - Edit in place, don't append
-   - ✅ **ASK USER** before creating ANY documentation
-   - ✅ **After session:** Archive session notes to `archive/YYYY-MM-DD/`
+   - ✅ **ASK USER** before creating documentation in NEW locations
+   - ✅ **After session:** Archive session notes to `archive/YYYY-MM-DD-description/`
+   - ✅ **Use placeholders** like `[USER TO DOCUMENT: ...]` for missing info
    - ✅ **Remove completed reasoning** - Keep progress/deviations only
    - ✅ **Clean as you go** - Don't append duplicate content
 
+   **Where to Document Common Things:**
+
+   | What | Where | Example |
+   |------|-------|---------|
+   | Infrastructure patterns | development-wiki/infrastructure/ | n8n setup, SSH aliases, backups |
+   | Shared workflows | development-wiki/workflows/ | Git flow, testing, deployment |
+   | Code standards | development-wiki/standards/ | Code quality, security, patterns |
+   | Operational guides | development-wiki/guides/ | Docker, Python setup, database |
+   | Project setup | {repo}/CLAUDE.md | Project-specific context, keys |
+   | Project overview | {repo}/README.md | What the project does, features |
+   | API reference | {repo}/docs/ | If project has extensive docs |
+   | Superseded content | archive/YYYY-MM-DD-reason/ | Preserved with README.md index |
+
    **Cost of violations:** 6+ hours of user cleanup time this month
    **Examples of violations:** LOCAL-PREVIEW-GUIDE.md (duplicate), transparency-*.md (3 files, 50KB), IMPLEMENTATION-PLAN.md (1,855 lines)
+
+   **Recent improvements (2025-11-03):**
+   - ✅ Created infrastructure/ directory for n8n, SSH, backup docs
+   - ✅ Created guides/ directory for operational patterns
+   - ✅ Archived superseded CQC planning docs (preserved, not deleted)
 
 5. **Path Standards - Windows Environment**
    - ✅ Use `C:\Users\chris\myTribe-Development\` for absolute paths
@@ -34,6 +66,26 @@
 6. **Memory** - Use `#` to add here, `/memory` to edit directly
 
 7. **Self-Check** - At the start of every response, confirm you've read rules 1-6 above
+
+### Quick Check: Where Should I Document This?
+
+**Before creating a new .md file, ask:**
+1. **Does development-wiki/ cover this?** → Link there, don't duplicate
+2. **Is this project-specific?** → Put in {repo}/CLAUDE.md or README.md
+3. **Is this truly new infrastructure?** → Create in development-wiki/infrastructure/
+4. **Is this a new operational pattern?** → Create in development-wiki/guides/
+5. **Still unsure?** → ASK USER before creating
+
+**Three-File Rule for Projects:**
+- `{repo}/CLAUDE.md` - Quick start, project context, key commands
+- `{repo}/README.md` - Project overview, features, getting started
+- `{repo}/CHANGELOG.md` - Version history (optional)
+- Everything else → Link to development-wiki/
+
+**Archive Policy:**
+- Session notes → `archive/YYYY-MM-DD-description/` immediately after session
+- Superseded docs → `archive/YYYY-MM-DD-description/` with README.md explaining what was replaced
+- Never delete → Always archive with explanation so we can reference history
 
 ---
 
@@ -249,6 +301,11 @@ myTribe-Development/
 
 **Workspace:** `C:\Users\chris\mytribe-development`
 
+**Infrastructure:**
+- Linux server (192.168.1.82) - n8n automation platform (Docker)
+- SSH aliases: `ssh local` (local network) | `ssh remote` (Cloudflare tunnel) | `ssh n8n`
+- **Documentation:** See [development-wiki/infrastructure/](development-wiki/infrastructure/) for setup, troubleshooting, backups
+
 **GitHub:** Org: `mytribeinsuranceexperts` | Primary repo: `mytribe-workspace`
 Default to this org for GitHub operations.
 
@@ -311,6 +368,6 @@ Default to this org for GitHub operations.
 
 ---
 
-**Last Updated:** 2025-11-02 | **Team:** myTribe Insurance Experts
+**Last Updated:** 2025-11-03 | **Team:** myTribe Insurance Experts
 
 <!-- End of CLAUDE.md -->

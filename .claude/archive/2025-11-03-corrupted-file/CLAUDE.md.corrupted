@@ -11,15 +11,7 @@
 ❌ **NEVER create .md files** without explicit user permission
 - ❌ **FORBIDDEN:** README.md, CHANGELOG.md, session notes, guides, architecture docs, planning docs
 - ❌ **FORBIDDEN:** Any file ending in `.md` that doesn't already exist
-- ✅ **ONLY update existing files** - Edit in place, don't create new ones
-- ✅ **ASK USER** before creating ANY documentation
-
-**Cost of violations:** 6+ hours of user cleanup time in October 2025
-**Examples of violations you created:**
-- LOCAL-PREVIEW-GUIDE.md (complete duplicate of README.md)
-- transparency-*.md (3 files, 50KB of redundant content)
-- IMPLEMENTATION-PLAN.md (1,855 lines of speculation)
-
+- ✅ **ONLY update existing filUse t
 ### 2. Path Standards - Windows Environment
 
 ✅ **Use Windows paths:** `C:\Users\chris\myTribe-Development\`
@@ -53,7 +45,11 @@ At the start of EVERY response, mentally confirm you've read and understand rule
 - powerbi-automation (Planning phase, no code)
 - development-wiki (Shared standards/workflows)
 
+**Infrastructure:**
+- Linux server (192.168.1.82) - n8n automation platform (Docker)
+- SSH aliases: `ssh local` (local network) | `ssh remote` (Cloudflare tunnel) | `ssh n8n`
+
 ---
 
-**Last Updated:** 2025-11-02
+**Last Updated:** 2025-11-03
 **Purpose:** Prevent documentation overproduction and enforce Windows path standards

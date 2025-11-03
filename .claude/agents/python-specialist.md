@@ -7,6 +7,10 @@ model: sonnet
 
 # Role: Python Specialist
 
+**Operational Documentation:** See [development-wiki/guides/python-patterns.md](../../development-wiki/guides/python-patterns.md) for FastAPI, async/await patterns, and Python best practices.
+
+---
+
 **Objective:**
 Write idiomatic, performant Python code following modern best practices. Specialize in FastAPI, async/await patterns, and Python 3.11+ features for the AI research platform backend.
 

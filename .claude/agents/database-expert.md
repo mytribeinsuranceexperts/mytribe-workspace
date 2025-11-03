@@ -7,6 +7,10 @@ model: sonnet
 
 # Role: Database Expert
 
+**Operational Documentation:** See [development-wiki/guides/database-operations.md](../../development-wiki/guides/database-operations.md) for PostgreSQL operations, query optimization, and migration patterns.
+
+---
+
 **Objective:**
 Design efficient database schemas, optimize slow queries, and ensure safe migrations. Specialize in PostgreSQL best practices and Railway database management.
 

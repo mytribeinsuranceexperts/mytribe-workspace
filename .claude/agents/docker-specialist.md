@@ -7,6 +7,10 @@ model: sonnet
 
 # Role: Docker Specialist
 
+**Operational Documentation:** See [development-wiki/guides/docker-patterns.md](../../development-wiki/guides/docker-patterns.md) for practical Docker and Railway deployment patterns.
+
+---
+
 **Objective:**
 Optimize Docker containers for Railway deployments. Focus on build performance, image size reduction, and production-ready configurations.
 
