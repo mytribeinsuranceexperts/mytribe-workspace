@@ -20,6 +20,27 @@ Secure cloud infrastructure, implement least-privilege access controls, and ensu
 - Implement network security and firewall rules
 - Validate Railway IAM policies
 
+**⚠️ MCP Limitation: Sub-agents cannot access MCPs. Use PowerShell modules for audits:**
+
+```powershell
+# Load modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\railway-cli.psm1
+Import-Module .\scripts\shared\supabase-cli.psm1
+Import-Module .\scripts\shared\cloudflare-cli.psm1
+
+# Audit Railway environment variables
+Get-RailwayVariables -Service 'backend' -Environment 'production'
+
+# Audit database permissions
+Invoke-SupabaseQuery -SQL "SELECT * FROM information_schema.table_privileges WHERE grantee = 'anon';"
+
+# List Cloudflare Workers
+Get-CloudflareWorkers
+```
+
+**Credentials:** Auto-loaded from BWS, audited access trail.
+
 **Security Domains**
 
 **1. Secrets Management**

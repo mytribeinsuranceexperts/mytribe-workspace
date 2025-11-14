@@ -28,6 +28,22 @@ Write idiomatic, performant Python code following modern best practices. Special
 - **Configuration externalization:** Use config.py for constants, not hardcoded values
 - **Avoid god classes:** Max 10 methods per class; split responsibilities when exceeded
 
+**⚠️ MCP Limitation: Sub-agents cannot access Supabase MCP. Use PowerShell for testing:**
+
+```powershell
+# Load modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\supabase-cli.psm1
+
+# Test database queries
+Invoke-SupabaseQuery -SQL "SELECT * FROM users WHERE email = 'test@example.com';"
+
+# Validate schema matches code models
+Get-SupabaseTableSchema -TableName 'users'
+```
+
+**Credentials:** Auto-loaded from BWS, never request keys.
+
 **Python Version & Stack**
 - **Python**: 3.11+
 - **Framework**: FastAPI

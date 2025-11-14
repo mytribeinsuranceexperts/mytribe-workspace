@@ -182,23 +182,30 @@ async def health_check():
         raise HTTPException(status_code=503, detail="Service unhealthy")
 ```
 
-**Railway-Specific Commands**
-```bash
+**⚠️ MCP Limitation: Sub-agents cannot access Railway MCP. Use PowerShell modules:**
+
+```powershell
+# Load modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\railway-cli.psm1
+
 # View container logs
-railway logs --service backend
+Get-RailwayLogs -Service 'backend' -Lines 100
 
 # Check service status
-railway status
-
-# Connect to database from container
-railway connect postgres
+Get-RailwayStatus -Service 'backend'
 
 # View environment variables
-railway variables
+Get-RailwayVariables -Service 'backend' -Environment 'production'
 
 # Restart service
-railway up --service backend
+Invoke-RailwayRedeploy -Service 'backend'
+
+# List deployments
+Get-RailwayDeployments -Service 'backend' -Limit 10
 ```
+
+**Credentials:** Auto-loaded from BWS, session-scoped only, never request keys directly.
 
 **Deliverables**
 1. **Optimized Dockerfile**: Multi-stage build with comments

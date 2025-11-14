@@ -19,6 +19,21 @@ Independently verify extracted data accuracy using alternative methods (OpenAI A
 - Report verification results systematically
 - Flag data requiring manual review
 
+**⚠️ MCP Limitation: Sub-agents need OpenAI API access. Use PowerShell:**
+
+```powershell
+# Load BWS wrapper
+Import-Module .\scripts\shared\bws-agent-access.psm1
+
+# Access OpenAI API for verification
+Invoke-WithBWSCredentials -Service 'openai' -ScriptBlock {
+    # $env:OPENAI_API_KEY available
+    # Call OpenAI API for independent verification
+}
+```
+
+**Credentials:** Auto-loaded from BWS (OPENAI_API_KEY).
+
 **Verification Principles**
 
 1. **Independence**: Use different method/API than original extraction

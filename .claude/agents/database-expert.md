@@ -76,24 +76,59 @@ LEFT JOIN prompts p ON p.research_item_id = ri.id
 GROUP BY ri.id;
 ```
 
-**Railway PostgreSQL Management**
-```bash
-# Connect to Railway database
-railway connect postgres
+**⚠️ MCP Limitation Workaround**
+Sub-agents cannot access MCP servers ([GitHub #7296](https://github.com/anthropics/claude-code/issues/7296)). Use PowerShell modules from `scripts/shared/` instead:
 
-# Check database size
-SELECT pg_size_pretty(pg_database_size('railway'));
+```powershell
+# Load BWS-backed modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\supabase-cli.psm1
 
-# List all tables with row counts
-SELECT schemaname, tablename, pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename))
-FROM pg_tables WHERE schemaname = 'public';
+# Test Supabase connection
+Test-SupabaseConnection
 
-# Monitor active connections
-SELECT count(*) FROM pg_stat_activity;
+# Execute queries
+Invoke-SupabaseQuery -SQL "SELECT pg_size_pretty(pg_database_size(current_database()));"
 
-# Create backup
-pg_dump -h [host] -U postgres -d railway > backup.sql
+# Get table schema
+Get-SupabaseTableSchema -TableName 'users'
+
+# Get indexes for a table
+Get-SupabaseIndexes -TableName 'users'
+
+# Analyze query performance
+Invoke-SupabaseExplain -SQL "SELECT * FROM users WHERE email = 'test@example.com';"
+
+# Get table statistics
+Get-SupabaseTableStats -TableName 'users'
+
+# List all migrations
+Get-SupabaseMigrations
+
+# List all tables
+Get-SupabaseTables
 ```
+
+**Railway PostgreSQL Management**
+```powershell
+# Load Railway module (for deployment logs, status checks)
+Import-Module .\scripts\shared\railway-cli.psm1
+
+# Get Railway service status
+Get-RailwayStatus -Service 'postgres'
+
+# Get Railway logs for database service
+Get-RailwayLogs -Service 'postgres' -Lines 100
+
+# Check environment variables
+Get-RailwayVariables -Service 'backend' -Environment 'production'
+```
+
+**Credentials Security**
+- ✅ Credentials auto-loaded from Bitwarden Secrets (BWS)
+- ✅ Session-scoped only (auto-cleared after use)
+- ✅ Never hardcode or request API keys
+- ✅ BWS audit trail for all access
 
 **Migration Safety Rules**
 1. **Test locally first**: Run migration on local database

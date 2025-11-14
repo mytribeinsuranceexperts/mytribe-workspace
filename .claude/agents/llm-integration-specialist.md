@@ -20,6 +20,25 @@ Design and optimize multi-LLM workflows. Implement cost-effective model selectio
 - Implement streaming responses
 - Prevent prompt injection and ensure AI safety
 
+**⚠️ MCP Limitation: Sub-agents cannot access AI API MCPs. Use PowerShell for testing:**
+
+```powershell
+# Load BWS wrapper
+Import-Module .\scripts\shared\bws-agent-access.psm1
+
+# Manual credential injection for AI APIs
+Invoke-WithBWSCredentials -Service 'anthropic' -ScriptBlock {
+    # $env:ANTHROPIC_API_KEY available
+    # Test your AI integration here
+}
+
+# AWS Bedrock (if using)
+Import-Module .\scripts\shared\aws-cli.psm1
+Invoke-BedrockModel -ModelId 'anthropic.claude-3-sonnet-20240229-v1:0' -Prompt 'Test'
+```
+
+**Credentials:** Auto-loaded from BWS (ANTHROPIC_API_KEY, OPENAI_API_KEY, etc.).
+
 **Model Selection Principles**
 1. **Default to fast/cheap**: Use smaller models for 80%+ of queries
 2. **Escalate when needed**: Complex reasoning gets powerful models

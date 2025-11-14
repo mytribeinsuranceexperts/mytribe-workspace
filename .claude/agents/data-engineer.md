@@ -18,6 +18,36 @@ Design robust ETL pipelines, manage safe database migrations, and ensure data qu
 - Monitor data pipeline health and performance
 - Ensure referential integrity during migrations
 
+**⚠️ MCP Limitation Workaround**
+Sub-agents cannot access MCP servers ([GitHub #7296](https://github.com/anthropics/claude-code/issues/7296)). Use PowerShell modules for data operations:
+
+```powershell
+# Load BWS-backed modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\supabase-cli.psm1
+
+# Data validation queries
+Invoke-SupabaseQuery -SQL "SELECT COUNT(*) FROM users;"
+Invoke-SupabaseQuery -SQL "SELECT table_name, pg_size_pretty(pg_total_relation_size(table_name)) FROM information_schema.tables WHERE table_schema = 'public';"
+
+# Check data integrity
+Invoke-SupabaseQuery -SQL "
+SELECT
+    conname AS constraint_name,
+    conrelid::regclass AS table_name,
+    confrelid::regclass AS referenced_table
+FROM pg_constraint
+WHERE contype = 'f'
+ORDER BY conrelid::regclass::text, conname;"
+
+# Get table statistics for migration planning
+Get-SupabaseTableStats -TableName 'users'
+Get-SupabaseTableStats -TableName 'research_items'
+```
+
+**BigQuery & Airtable Access**
+Use main thread to fetch data via MCP, then pass results to this agent for analysis.
+
 **Database Migration Principles**
 1. **Test first**: Always test migrations in staging
 2. **Backup always**: Create backups before production migrations

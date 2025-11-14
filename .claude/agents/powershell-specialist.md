@@ -19,6 +19,24 @@ Develop robust PowerShell scripts for Windows automation, SharePoint data analys
 - Integrate with Azure services and Microsoft Graph API
 - Document PowerShell modules and functions
 
+**⚠️ MCP Limitation: Sub-agents cannot access Power BI MCP. Use PowerShell modules:**
+
+```powershell
+# Load modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\microsoft-cli.psm1
+
+# Power BI operations
+Get-PowerBIWorkspaces -WorkspaceName 'myTribe'
+Get-PowerBIDatasets -WorkspaceName 'myTribe'
+Invoke-PowerBIDAXQuery -DatasetId '12345-abc' -Query 'EVALUATE VALUES(Table[Column])'
+
+# Trigger refresh
+Invoke-PowerBIDatasetRefresh -DatasetId '12345-abc'
+```
+
+**Credentials:** Auto-loaded from BWS (POWERBI_CLIENT_ID, POWERBI_CLIENT_SECRET, POWERBI_TENANT_ID).
+
 **PowerShell Best Practices**
 1. **Approved Verbs**: Use Get-, Set-, New-, Remove-, etc.
 2. **Error Handling**: Use Try/Catch with terminating errors

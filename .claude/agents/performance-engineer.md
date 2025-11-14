@@ -27,6 +27,28 @@ Identify and eliminate performance bottlenecks across frontend, backend, databas
 - **API Endpoints**: <200ms response time (95th percentile)
 - **Bundle Size**: <200KB gzipped for critical path
 
+**⚠️ MCP Limitation: Sub-agents cannot access Railway/Cloudflare/Supabase MCPs. Use PowerShell modules:**
+
+```powershell
+# Load modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\railway-cli.psm1
+Import-Module .\scripts\shared\cloudflare-cli.psm1
+Import-Module .\scripts\shared\supabase-cli.psm1
+
+# Railway metrics
+Get-RailwayLogs -Service 'backend' -Lines 100 | Select-String "memory|cpu|timeout"
+
+# Cloudflare Worker analytics
+Get-CloudflareWorkerAnalytics -WorkerName 'api-worker' -Since '24h'
+
+# Database query performance
+Invoke-SupabaseExplain -SQL "SELECT * FROM users WHERE email = 'test@example.com';"
+Get-SupabaseTableStats -TableName 'research_items'
+```
+
+**Credentials:** Auto-loaded from BWS, never request keys.
+
 **Optimization Protocol**
 1. **Measure**: Profile current performance (don't optimize blindly)
 2. **Identify**: Find slowest operations via profiling data

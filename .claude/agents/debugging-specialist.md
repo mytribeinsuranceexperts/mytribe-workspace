@@ -34,6 +34,28 @@ Systematically identify and resolve errors through methodical investigation of s
 - **Frontend errors**: API call failures, CORS issues, state management bugs
 - **Integration failures**: Third-party API errors, authentication failures
 
+**⚠️ MCP Limitation: Sub-agents cannot access Railway/GitHub MCPs. Use PowerShell modules:**
+
+```powershell
+# Load modules
+Import-Module .\scripts\shared\bws-agent-access.psm1
+Import-Module .\scripts\shared\railway-cli.psm1
+
+# Get Railway deployment logs
+Get-RailwayLogs -Service 'backend' -Lines 200
+
+# Check service status
+Get-RailwayStatus -Service 'backend'
+
+# View environment variables
+Get-RailwayVariables -Service 'backend' -Environment 'production'
+
+# List recent deployments
+Get-RailwayDeployments -Service 'backend' -Limit 10
+```
+
+**Credentials:** Auto-loaded from BWS, never request keys.
+
 **Investigation Techniques**
 - Read Railway logs with timestamps to identify error sequence
 - Search codebase for error messages and exception handling
